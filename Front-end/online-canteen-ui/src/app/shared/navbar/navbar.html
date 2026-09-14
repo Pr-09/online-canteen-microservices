@@ -1,0 +1,87 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">🍽</span>
+      <span>Online Canteen</span>
+    </a>
+
+    <!-- Navigation -->
+    <div class="nav-links">
+      <a routerLink="/">Home</a>
+
+      <a routerLink="/menu">Menu</a>
+
+      <a routerLink="/cart"> 🛒 Cart </a>
+
+      @if (user) {
+        <a routerLink="/my-orders"> My Orders </a>
+      }
+    </div>
+
+    <!-- Right side -->
+    <div class="nav-right">
+      @if (!user) {
+        <button class="login-btn" (click)="login()">Login</button>
+      } @else {
+        <div class="profile-wrapper">
+          <button class="profile-btn" (click)="toggleProfile()">
+            <div class="profile-avatar">
+              {{ user.name.charAt(0).toUpperCase() }}
+            </div>
+
+            <div class="profile-info">
+              <span class="profile-name">
+                {{ user.name }}
+              </span>
+
+              <span class="profile-role">
+                {{ user.role }}
+              </span>
+            </div>
+
+            <span class="arrow"> ▾ </span>
+          </button>
+
+          @if (profileMenuOpen) {
+            <div class="profile-dropdown">
+              <!-- User information -->
+
+              <div class="dropdown-user">
+                <div class="large-avatar">
+                  {{ user.name.charAt(0).toUpperCase() }}
+                </div>
+
+                <div class="user-details">
+                  <strong>
+                    {{ user.name }}
+                  </strong>
+
+                  <small>
+                    {{ user.email }}
+                  </small>
+                </div>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+              <!-- Profile -->
+
+              <button (click)="openProfile()">👤 My Profile</button>
+
+              <!-- Orders -->
+
+              <button (click)="openOrders()">📋 My Orders</button>
+
+              <div class="dropdown-divider"></div>
+
+              <!-- Logout -->
+
+              <button class="logout" (click)="logout()">🚪 Logout</button>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</nav>

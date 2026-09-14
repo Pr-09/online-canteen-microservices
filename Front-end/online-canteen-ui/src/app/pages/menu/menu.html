@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="header">
+    <h1>Explore Menu</h1>
+
+    <input type="text" placeholder="Search food..." />
+  </div>
+
+  <div class="menu-grid">
+    @for (item of menuItems; track item.id) {
+      <div class="food-card">
+        <img [src]="item.imageUrl" alt="" />
+
+        <div class="content">
+          <h2>{{ item.name }}</h2>
+
+          <p>
+            {{ item.description }}
+          </p>
+
+          <div class="info">
+            <span> ₹{{ item.price }} </span>
+
+            <span> {{ item.prepTime }} min </span>
+          </div>
+
+          <button (click)="addToCart(item)">Add To Cart</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <h1>Menu Management</h1>
+
+  <div class="form-card">
+    <input [(ngModel)]="form.name" placeholder="Food Name" />
+
+    <input [(ngModel)]="form.description" placeholder="Description" />
+
+    <input type="number" [(ngModel)]="form.price" placeholder="Price" />
+
+    <input type="number" [(ngModel)]="form.prepTime" placeholder="Preparation Time" />
+
+    <!-- <input [(ngModel)]="form.imageUrl" placeholder="Image URL" /> -->
+    <div class="image-upload">
+      <input type="file" accept=".jpg,.jpeg,.png,.webp" (change)="onFileSelected($event)" />
+
+      @if (imagePreview) {
+        <img [src]="imagePreview" class="preview-image" />
+
+        <button type="button" class="remove-btn" (click)="removeImage()">Remove Image</button>
+      }
+    </div>
+
+    <input [(ngModel)]="form.category" placeholder="Category" />
+
+    <button (click)="addItem()">Add Item</button>
+  </div>
+
+  <div class="menu-grid">
+    @for (item of menuItems; track item.id) {
+      <div class="food-card">
+        <img [src]="item.imageUrl" alt="" />
+
+        <h3>
+          {{ item.name }}
+        </h3>
+
+        <p>₹{{ item.price }}</p>
+
+        <p>
+          {{ item.category }}
+        </p>
+
+        <button (click)="deleteItem(item.id)">Delete</button>
+      </div>
+    }
+  </div>
+</div>

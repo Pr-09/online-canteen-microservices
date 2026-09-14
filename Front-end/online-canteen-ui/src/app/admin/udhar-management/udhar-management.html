@@ -1,0 +1,41 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <h1>Udhar Management</h1>
+
+  <div class="customer-form">
+    <input [(ngModel)]="customer.userId" placeholder="User Id" />
+
+    <input [(ngModel)]="customer.name" placeholder="Name" />
+
+    <input [(ngModel)]="customer.email" placeholder="Email" />
+
+    <input [(ngModel)]="customer.mobile" placeholder="Mobile" />
+
+    <input [(ngModel)]="customer.studentId" placeholder="Student Id" />
+
+    <button (click)="addCustomer()">Add Customer</button>
+  </div>
+
+  @for (customer of customers; track customer.id) {
+    <div class="customer-card">
+      <div>
+        <h3>
+          {{ customer.name }}
+        </h3>
+
+        <p>Limit: ₹{{ customer.creditLimit }}</p>
+
+        <p>Pending: ₹{{ customer.pendingAmount }}</p>
+      </div>
+
+      <div class="actions">
+        <button (click)="generateCode(customer)">Generate Code</button>
+
+        <button (click)="increaseLimit(customer)">Increase Limit</button>
+
+        <button (click)="markPaid(customer)">Mark Paid</button>
+      </div>
+    </div>
+  }
+</div>

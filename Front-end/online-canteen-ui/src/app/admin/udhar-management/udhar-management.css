@@ -1,0 +1,53 @@
+.container {
+  padding: 40px;
+}
+
+.customer-form {
+  display: grid;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+}
+
+.customer-form input {
+  padding: 12px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+}
+
+.customer-card {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px;
+
+  margin-bottom: 15px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}

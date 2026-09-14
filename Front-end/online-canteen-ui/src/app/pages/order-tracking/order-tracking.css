@@ -1,0 +1,47 @@
+.container {
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 50px;
+}
+
+.header {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.timeline {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.step {
+  flex: 1;
+
+  text-align: center;
+
+  padding: 20px;
+
+  background: #e5e7eb;
+
+  border-radius: 15px;
+
+  transition: 0.3s;
+}
+
+.active {
+  background: #22c55e;
+
+  color: white;
+}
+
+.info {
+  margin-top: 40px;
+
+  text-align: center;
+}

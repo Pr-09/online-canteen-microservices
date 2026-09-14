@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div class="checkout-container">
+  <h1>Checkout</h1>
+
+  <div class="checkout-card">
+    <div class="form-group">
+      <label>Customer Name</label>
+
+      <input type="text" [(ngModel)]="customerName" readonly />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+
+      <input type="email" [(ngModel)]="email" readonly />
+    </div>
+
+    <div class="form-group">
+      <label>Table Number</label>
+
+      <input type="number" [(ngModel)]="tableNumber" min="1" />
+    </div>
+
+    <div class="form-group">
+      <label>Payment Type</label>
+
+      <select [(ngModel)]="paymentType">
+        <option value="ONLINE">Online Payment</option>
+
+        <option value="UDHAR">Udhar</option>
+      </select>
+    </div>
+
+    @if (paymentType === 'UDHAR') {
+      <div class="form-group">
+        <label>Udhar Code</label>
+
+        <input type="text" [(ngModel)]="udharCode" placeholder="Enter Udhar Code" />
+      </div>
+    }
+
+    <div class="total">
+      <span>Total Amount</span>
+
+      <strong> ₹{{ total }} </strong>
+    </div>
+
+    <button class="place-order-btn" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>

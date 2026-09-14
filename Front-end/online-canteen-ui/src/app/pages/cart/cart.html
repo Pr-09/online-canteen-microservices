@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="cart-container">
+  <h1>Your Cart</h1>
+
+  @for (item of cartItems; track item.item.id) {
+    <div class="cart-card">
+      <div>
+        <h3>
+          {{ item.item.name }}
+        </h3>
+
+        <p>₹{{ item.item.price }}</p>
+      </div>
+
+      <div class="actions">
+        <button (click)="decrease(item.item.id)">-</button>
+
+        <span>
+          {{ item.quantity }}
+        </span>
+
+        <button (click)="increase(item.item.id)">+</button>
+
+        <button (click)="remove(item.item.id)">Remove</button>
+      </div>
+    </div>
+  }
+
+  <div class="summary">
+    <h2>Total ₹{{ total }}</h2>
+
+    <button routerLink="/checkout">Proceed To Checkout</button>
+  </div>
+</div>

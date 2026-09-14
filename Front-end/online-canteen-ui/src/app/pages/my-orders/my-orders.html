@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <h1>My Orders</h1>
+
+  @for (order of orders; track order.id) {
+    <div class="order-card">
+      <div>
+        <h3>Order # {{ order.id }}</h3>
+
+        <p>₹{{ order.totalAmount }}</p>
+      </div>
+
+      <div>
+        <span class="status">
+          {{ order.status }}
+        </span>
+      </div>
+
+      <button [routerLink]="['/order-tracking', order.id]">Track Order</button>
+    </div>
+  }
+</div>

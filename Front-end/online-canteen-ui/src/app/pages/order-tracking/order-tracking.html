@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+@if (order) {
+  <div class="container">
+    <div class="header">
+      <h1>Order #{{ order.id }}</h1>
+
+      <h2>₹{{ order.totalAmount }}</h2>
+      <!-- <h2>₹{{ order.status }} console.log('order:',{{ order.status }});</h2> -->
+    </div>
+
+    <div class="timeline">
+      <div class="step" [class.active]="getStep(order.status) >= 1">✓ Order Placed</div>
+
+      <div class="step" [class.active]="getStep(order.status) >= 2">✓ Accepted</div>
+
+      <div class="step" [class.active]="getStep(order.status) >= 3">✓ Preparing</div>
+
+      <div class="step" [class.active]="getStep(order.status) >= 4">✓ Ready</div>
+
+      <div class="step" [class.active]="getStep(order.status) >= 5">✓ Delivered</div>
+    </div>
+
+    <div class="info">
+      <h3>
+        Current Status:
+        {{ order.status }}
+      </h3>
+
+      <h3>
+        Estimated Time:
+        {{ order.estimatedTime }}
+        mins
+      </h3>
+    </div>
+  </div>
+}

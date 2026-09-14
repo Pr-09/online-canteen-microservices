@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="profile-page">
+  <div class="profile-card">
+    @if (user) {
+      <div class="profile-header">
+        <div class="profile-avatar">
+          {{ user.name.charAt(0).toUpperCase() }}
+        </div>
+
+        <div>
+          <h1>{{ user.name }}</h1>
+
+          <p>
+            {{ user.email }}
+          </p>
+        </div>
+      </div>
+
+      <div class="profile-details">
+        <div class="profile-row">
+          <span class="label"> User ID </span>
+
+          <span>
+            {{ user.userId }}
+          </span>
+        </div>
+
+        <div class="profile-row">
+          <span class="label"> Full Name </span>
+
+          <span>
+            {{ user.name }}
+          </span>
+        </div>
+
+        <div class="profile-row">
+          <span class="label"> Email </span>
+
+          <span>
+            {{ user.email }}
+          </span>
+        </div>
+
+        <div class="profile-row">
+          <span class="label"> Role </span>
+
+          <span class="role">
+            {{ user.role }}
+          </span>
+        </div>
+      </div>
+    } @else {
+      <div class="loading">Loading profile...</div>
+    }
+  </div>
+</div>

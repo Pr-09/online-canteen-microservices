@@ -1,0 +1,28 @@
+.admin-nav{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:20px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.links{
+
+    display:flex;
+
+    gap:20px;
+}
+
+.links a{
+
+    color:white;
+
+    text-decoration:none;
+}
