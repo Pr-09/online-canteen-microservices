@@ -1,14 +1,14 @@
 server:
-  port: ${PORT:8085}
+  port: ${PORT}
 
 spring:
   application:
     name: PAYMENT-SERVICE
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/canteen_db_new?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:admin}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -19,9 +19,9 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_SERVER_URL}
 
 razorpay:
-  key-id: ${ RAZORPAY_ID:rzp_test_TKsNh0krjimjTG }
-  key-secret: ${RAZORPAY_SECRET:Vqd0FQ6pGXpT4RxZG3LBC7lr}
+  key-id: ${ RAZORPAY_ID }
+  key-secret: ${RAZORPAY_SECRET}
   webhook-secret: ${ WEBHOOK_SECRET }
