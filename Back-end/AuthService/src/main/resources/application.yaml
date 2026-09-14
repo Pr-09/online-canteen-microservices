@@ -3,9 +3,9 @@ spring:
     name: Auth-Service
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/canteen_db_new?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:admin}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -13,12 +13,12 @@ spring:
     show-sql: true
 
 jwt:
-  secret: ${JWT_SECRET:OnlineCanteenJwtSecretKey2026MustBeAtLeast32BytesLong}
+  secret: ${JWT_SECRET}
 
 server:
-  port: ${PORT:8083}
+  port: ${PORT}
 
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_SERVER_URL}
