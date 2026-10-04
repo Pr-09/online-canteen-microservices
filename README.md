@@ -11,12 +11,10 @@ The system is built using a **Microservices Architecture** with Spring Boot, Ang
 ## 🚀 Live Application
 
 ### Frontend
-https://YOUR-FRONTEND-URL.onrender.com
+https://online-canteen-frontend.onrender.com
 
 ### API Gateway
 https://online-canteen-apigateway.onrender.com
-
-> Replace `YOUR-FRONTEND-URL` with your actual deployed frontend URL.
 
 ---
 
